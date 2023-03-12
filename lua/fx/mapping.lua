@@ -3,6 +3,8 @@ local keymap = vim.keymap
 
 -- recent open file
 -- keymap.set('n','<leader><leader>','<c-^>')
+keymap.set('n', '<space>', '<nop>')
+keymap.set('v', '<space>', '<nop>')
 
 --visual indent
 keymap.set('v','v','<esc>')
@@ -23,3 +25,13 @@ keymap.set('n','<leader>q',':q<cr>')
 
 keymap.set('i','<c-j>','<esc>o')
 keymap.set('i','<c-k>','<esc>O')
+keymap.set('n', 'X', ':keeppatterns substitute/\\s*\\%#\\s*/\\r/e <bar> normal! ==^<cr>', { silent = true })
+
+-- Navigate merge conflict markers
+keymap.set('n', ']n', [[:call search('^\(@@ .* @@\|[<=>|]\{7}[<=>|]\@!\)', 'W')<cr>]], { silent = true })
+keymap.set('n', '[n', [[:call search('^\(@@ .* @@\|[<=>|]\{7}[<=>|]\@!\)', 'bW')<cr>]], { silent = true })
+-- Navigate loclist
+keymap.set('n', ']l', ':lnext<cr>', { silent = true })
+keymap.set('n', '[l', ':lprev<cr>', { silent = true })
+-- Search & replace word under cursor
+keymap.set('n', '<leader>sr', ':%s/\\<<c-r><c-w>\\>/')

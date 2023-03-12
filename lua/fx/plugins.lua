@@ -113,12 +113,6 @@ require("lazy").setup({
     },
   },
   {
-    'tamago324/lir.nvim', -- File explorer
-    config = function()
-    --   require 'j.plugins.lir'
-    end,
-  },
-  {
     'ggandor/leap.nvim',
     config = function()
       require('leap').set_default_keymaps()
@@ -175,5 +169,23 @@ require("lazy").setup({
     config = function()
       require('plugins.whichkey')
     end
+  },
+  --vsc 
+  {
+    'f-person/git-blame.nvim'
+  },
+  {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('plugins.gitsigns')
+    end
+  },
+  -- status
+  {
+    'glepnir/galaxyline.nvim',
+    config = function()
+      require('plugins.status')
+    end
   }
+
 })

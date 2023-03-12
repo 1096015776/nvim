@@ -26,12 +26,35 @@ local mappings = {
     name = "telescope",
     f = {  
       '<cmd>lua require("telescope.builtin").find_files({no_ignore=false,hidden=true})<cr>',
-      "Find files",
+      "files",
     },
     g = {
-      '<cmd>lua require("telescope.builtin").live_grep({no_ignore=false,hidden=true})<cr>', "Find Text" 
+      '<cmd>lua require("telescope.builtin").live_grep({no_ignore=false,hidden=true})<cr>', "Text" 
+    },
+    u = {
+      '<cmd>lua require("telescope.builtin").colorscheme()<cr>',
+      'ui'
+    },
+    h = {
+      '<cmd>lua require("telescope.builtin").help_tags()<cr>',
+      'help'
     }
   },
+  g = {
+    name = "git",
+    s = {
+      '<cmd>lua require"gitsigns".stage_hunk()<CR>',
+      'stage'
+    },
+    r = {
+      '<cmd>lua require"gitsigns".reset_hunk()<CR>',
+      'reset'
+    },
+    p = {
+      '<cmd>lua require"gitsigns".preview_hunk()<CR>',
+      'preview'
+    }
+  }
 }
 
 which_key.register(mappings, opts)
