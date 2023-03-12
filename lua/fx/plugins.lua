@@ -30,7 +30,7 @@ require("lazy").setup({
   {
     'folke/noice.nvim',
     config = function()
-      require 'plugins.noice'
+      -- require 'plugins.noice'
     end,
     dependencies = {
       'MunifTanjim/nui.nvim',
@@ -40,6 +40,12 @@ require("lazy").setup({
   -- core util
   'tpope/vim-repeat',
   'rmagatti/alternate-toggler',
+  {
+    'kyazdani42/nvim-tree.lua',
+    config = function()
+      require('plugins.tree')
+    end
+  },
   {
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
