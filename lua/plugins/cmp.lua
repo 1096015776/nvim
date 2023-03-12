@@ -39,10 +39,12 @@ cmp.setup {
   },
 
   mapping = cmp.mapping.preset.insert {
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-y>'] = cmp.mapping.confirm {
+    ['<Tab>'] = cmp.mapping.select_next_item(),
+    ['<S-Tab>']=cmp.mapping.select_prev_item(),
+    ['<c-y>'] = cmp.mapping.complete(),
+    ['<cr>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Insert,
-      select = true,
+      select = false,
     },
   },
 

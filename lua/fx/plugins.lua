@@ -24,6 +24,7 @@ require("lazy").setup({
 
   -- core util
   'tpope/vim-repeat',
+  'rmagatti/alternate-toggler',
   {
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
@@ -101,7 +102,7 @@ require("lazy").setup({
     'nvim-telescope/telescope.nvim',
     cmd = 'Telescope',
     config = function()
-    --   require 'j.plugins.telescope'
+      require 'plugins.telescope'
     end,
     dependencies = {
       'nvim-lua/plenary.nvim', -- Useful Lua utilities
@@ -164,10 +165,15 @@ require("lazy").setup({
   },
   {
     'neovim/nvim-lspconfig',
-    config=function()
+    config = function()
       require('plugins.lsp')
-      require('plugins.lsp-setting.tsserver_ls')
+      -- require('lspconfig').tsserver.setup {}
     end
   },
-  'jose-elias-alvarez/typescript.nvim'
+  {
+    'folke/which-key.nvim',
+    config = function()
+      require('plugins.whichkey')
+    end
+  }
 })

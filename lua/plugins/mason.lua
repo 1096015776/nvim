@@ -16,6 +16,7 @@ local ensure_installed = {
   'html-lsp',
   'svelte-language-server',
   'tailwindcss-language-server',
+  'pyright',
 
   -- Linting and formatting
   'eslint_d',
