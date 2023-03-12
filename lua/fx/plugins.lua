@@ -18,15 +18,22 @@ require("lazy").setup({
 
   -- core util
   'tpope/vim-repeat',
-   {
+  {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    config = function()
+      require 'plugins.autopairs'
+    end,
+  },
+  {
     'numToStr/Comment.nvim',
     keys = {
         { 'gc', mode = { 'n', 'v' }, 'gcc' },
     },
     config = function()
-        require('Comment').setup {
-            pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
-        }
+      require('Comment').setup {
+          pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+      }
     end,
   },
   {
@@ -97,22 +104,33 @@ require("lazy").setup({
     end,
   },
     -- Advanced highlighting
-    {
-        'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate',
-        config = function()
-        --   require 'j.plugins.treesitter'
-        end,
-        dependencies = {
-          'windwp/nvim-ts-autotag', -- Automatically end & rename tags
-          -- Dynamically set commentstring based on cursor location in file
-          { 'JoosepAlviste/nvim-ts-context-commentstring', dev = false },
-          'nvim-treesitter/playground',
-        },
+  {
+      'nvim-treesitter/nvim-treesitter',
+      build = ':TSUpdate',
+      config = function()
+        require 'plugins.treesitter'
+      end,
+      dependencies = {
+        'windwp/nvim-ts-autotag', -- Automatically end & rename tags
+        -- Dynamically set commentstring based on cursor location in file
+        { 'JoosepAlviste/nvim-ts-context-commentstring', dev = false },
+        'nvim-treesitter/playground',
       },
-      --lang feature
-
-
-
-  
+    },
+    --lang feature
+    {
+      'axelvc/template-string.nvim',
+      config = function()
+        require('template-string').setup {
+          filetypes = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'vue' },
+          remove_template_string = true,
+          restore_quotes = {
+            normal = [[']],
+            jsx = [["]],
+          },
+        }
+      end,
+      event = 'InsertEnter',
+      ft = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'vue' },
+    }
 })
