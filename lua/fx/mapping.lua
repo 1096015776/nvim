@@ -33,5 +33,7 @@ keymap.set('n', '[n', [[:call search('^\(@@ .* @@\|[<=>|]\{7}[<=>|]\@!\)', 'bW')
 -- Navigate loclist
 keymap.set('n', ']l', ':lnext<cr>', { silent = true })
 keymap.set('n', '[l', ':lprev<cr>', { silent = true })
+keymap.set('n', ']c', ':cnext<cr>', { silent = true })
+keymap.set('n', '[c', ':cprev<cr>', { silent = true })
 -- Search & replace word under cursor
 keymap.set('n', '<leader>sr', ':%s/\\<<c-r><c-w>\\>/')
