@@ -1,4 +1,5 @@
 vim.g.mapleader = ' '
+vim.g.maplocalleader = '\\'
 local keymap = vim.keymap
 
 -- recent open file
@@ -39,3 +40,7 @@ keymap.set('n', '[c', ':cprev<cr>', { silent = true })
 keymap.set('n', '<leader>sr', ':%s/\\<<c-r><c-w>\\>/')
 
 keymap.set('n', '<c-g>', require('fx.utils').file_info)
+
+keymap.set('n','<localleader><localleader>','<cmd>nohlsearch<cr>',{silent = true})
+keymap.set('n','<localleader>f','<cmd>lua require("telescope.builtin").find_files({no_ignore=false,hidden=true})<cr>',{silent = true})
+keymap.set('n','<localleader>g','<cmd>lua require("telescope.builtin").live_grep({no_ignore=false,hidden=true})<cr>',{silent = true})

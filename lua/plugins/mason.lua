@@ -21,6 +21,7 @@ local ensure_installed = {
   -- Linting and formatting
   'eslint_d',
   'stylua',
+  'vetur-vls'
 
   -- DAP servers
   -- 'node-debug2-adapter',
