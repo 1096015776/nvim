@@ -3,7 +3,6 @@ vim.g.maplocalleader = '\\'
 local keymap = vim.keymap
 
 -- recent open file
--- keymap.set('n','<leader><leader>','<c-^>')
 keymap.set('n', '<space>', '<nop>')
 keymap.set('v', '<space>', '<nop>')
 

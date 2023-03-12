@@ -198,9 +198,8 @@ require("lazy").setup({
     end
   },
   --vsc 
-  {
-    'f-person/git-blame.nvim'
-  },
+    'f-person/git-blame.nvim',
+    'kdheepak/lazygit.nvim',
   {
     'lewis6991/gitsigns.nvim',
     config = function()

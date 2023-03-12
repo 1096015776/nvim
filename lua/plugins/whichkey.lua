@@ -18,6 +18,7 @@ local mappings = {
   ["q"] = { "<cmd>q<CR>", "Quit" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["<leader>"] = {"<c-^>",'last'},
+  -- project
   t = {
     name = "telescope",
     f = {  
@@ -53,6 +54,10 @@ local mappings = {
     p = {
       '<cmd>lua require"gitsigns".preview_hunk()<CR>',
       'preview'
+    },
+    l = {
+      '<cmd>LazyGit<cr>',
+      'lazygit'
     }
   },
   l = {
