@@ -21,6 +21,21 @@ require("lazy").setup({
       require 'plugins.web_devicons'
     end,
   },
+  {
+    'rcarriga/nvim-notify',
+    config = function()
+      require('notify').setup()
+    end
+  },
+  {
+    'folke/noice.nvim',
+    config = function()
+      require 'plugins.noice'
+    end,
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+    },
+  },
 
   -- core util
   'tpope/vim-repeat',

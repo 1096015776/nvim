@@ -37,3 +37,5 @@ keymap.set('n', ']c', ':cnext<cr>', { silent = true })
 keymap.set('n', '[c', ':cprev<cr>', { silent = true })
 -- Search & replace word under cursor
 keymap.set('n', '<leader>sr', ':%s/\\<<c-r><c-w>\\>/')
+
+keymap.set('n', '<c-g>', require('fx.utils').file_info)
