@@ -18,15 +18,15 @@ local mappings = {
   ["q"] = { "<cmd>q<CR>", "Quit" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["<leader>"] = {"<c-^>",'last'},
-  u = {
-    name = "util",
-    ['t'] = { '<cmd>ToggleAlternate<CR>', 'switch' },
-  },
   t = {
     name = "telescope",
     f = {  
       '<cmd>lua require("telescope.builtin").find_files({no_ignore=false,hidden=true})<cr>',
       "files",
+    },
+    d = {
+      '<cmd>lua require("telescope.builtin").diagnostics()<cr>',
+      "diagnostics",
     },
     g = {
       '<cmd>lua require("telescope.builtin").live_grep({no_ignore=false,hidden=true})<cr>', "Text" 
@@ -53,6 +53,13 @@ local mappings = {
     p = {
       '<cmd>lua require"gitsigns".preview_hunk()<CR>',
       'preview'
+    }
+  },
+  l = {
+    name = "lsp",
+    f = {
+      "vim.lsp.buf.format({ async = true })",
+      'format'
     }
   }
 }

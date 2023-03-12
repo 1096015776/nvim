@@ -5,6 +5,7 @@ require('telescope').setup {
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
+    layout_strategy = "bottom_pane",
     file_ignore_patterns = {
       'public',
       'dist',
@@ -28,11 +29,19 @@ require('telescope').setup {
      },
     },
     layout_config = {
-      horizontal = {
-        preview_cutoff = 100,
-        preview_width = 0.6
+      prompt_position="bottom",
+      bottom_pane = {
+          height = 15,
+          preview_cutoff = 100,
+          prompt_position = "bottom",
       },
-    },
+  },
+    -- layout_config = {
+    --   horizontal = {
+    --     preview_cutoff = 100,
+    --     preview_width = 0.6
+    --   },
+    -- },
   },
   extensions = {
     fzf = {

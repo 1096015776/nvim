@@ -30,7 +30,7 @@ require("lazy").setup({
   {
     'folke/noice.nvim',
     config = function()
-      -- require 'plugins.noice'
+      require 'plugins.noice'
     end,
     dependencies = {
       'MunifTanjim/nui.nvim',
@@ -39,7 +39,13 @@ require("lazy").setup({
 
   -- core util
   'tpope/vim-repeat',
-  'rmagatti/alternate-toggler',
+    {
+      "AndrewRadev/switch.vim",
+      event = { "VeryLazy" },
+      config = function()
+        require('plugins.switch').load()
+      end
+  },
   {
     'kyazdani42/nvim-tree.lua',
     config = function()
