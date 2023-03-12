@@ -15,9 +15,29 @@ require("lazy").setup({
   'sainnhe/everforest',
   'navarasu/onedark.nvim',
   'shaunsingh/nord.nvim',
+  {
+    'kyazdani42/nvim-web-devicons',
+    config = function()
+      require 'plugins.web_devicons'
+    end,
+  },
 
   -- core util
   'tpope/vim-repeat',
+  {
+    'hrsh7th/nvim-cmp',
+    event = 'InsertEnter',
+    dependencies = {
+      'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-path',
+      'saadparwaiz1/cmp_luasnip',
+      'petertriho/cmp-git',
+    },
+    config = function()
+      require 'plugins.cmp'
+    end,
+  },
   {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
@@ -132,5 +152,22 @@ require("lazy").setup({
       end,
       event = 'InsertEnter',
       ft = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'vue' },
-    }
+  },
+  {
+    'williamboman/mason.nvim',
+    config = function()
+      require('plugins.mason')
+    end,
+  },
+  {
+    'williamboman/mason-lspconfig.nvim'
+  },
+  {
+    'neovim/nvim-lspconfig',
+    config=function()
+      require('plugins.lsp')
+      require('plugins.lsp-setting.tsserver_ls')
+    end
+  },
+  'jose-elias-alvarez/typescript.nvim'
 })
