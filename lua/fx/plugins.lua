@@ -105,7 +105,7 @@ require("lazy").setup({
   },
   {
     'kylechui/nvim-surround',
-    keys = { 'ys', 'cs', 'ds' },
+    -- keys = { 'ys', 'cs', 'ds' },
     config = function()
         require('nvim-surround').setup()
     end,
@@ -139,12 +139,12 @@ require("lazy").setup({
       'nvim-telescope/telescope-ui-select.nvim',
     },
   },
-  {
-    'ggandor/leap.nvim',
-    config = function()
-      -- require('leap').set_default_keymaps()
-    end,
-  },
+  -- {
+  --   'ggandor/leap.nvim',
+  --   config = function()
+  --     require('leap').set_default_keymaps()
+  --   end,
+  -- },
     -- Advanced highlighting
   {
       'nvim-treesitter/nvim-treesitter',
