@@ -139,12 +139,18 @@ require("lazy").setup({
       'nvim-telescope/telescope-ui-select.nvim',
     },
   },
-  -- {
-  --   'ggandor/leap.nvim',
-  --   config = function()
-  --     require('leap').set_default_keymaps()
-  --   end,
-  -- },
+  {
+    'phaazon/hop.nvim',
+    cmd = {
+      "HopWord",
+      "HopLine",
+      "HopChar1",
+      "HopChar1CurrentLine",
+    },
+    config = function()
+      require('plugins.hop')
+    end
+  },
     -- Advanced highlighting
   {
       'nvim-treesitter/nvim-treesitter',
