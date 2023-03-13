@@ -40,7 +40,6 @@ require("nvim-tree").setup({
             return { relative = "editor", border = "rounded", width = width, height = height, row = top, col = left }
         end,
     },
-
   },
   diagnostics = {
     enable = true,
