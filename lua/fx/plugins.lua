@@ -142,7 +142,7 @@ require("lazy").setup({
   {
     'ggandor/leap.nvim',
     config = function()
-      require('leap').set_default_keymaps()
+      -- require('leap').set_default_keymaps()
     end,
   },
     -- Advanced highlighting
@@ -211,6 +211,12 @@ require("lazy").setup({
     'glepnir/galaxyline.nvim',
     config = function()
       require('plugins.status')
+    end
+  },
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require('plugins.indentline')
     end
   }
 
