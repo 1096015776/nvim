@@ -236,6 +236,18 @@ require("lazy").setup({
     config = function()
       require('plugins.hlslens')
     end
+  },
+  {
+    'NvChad/nvim-colorizer.lua', -- Preview colors
+    config = function()
+      require('colorizer').setup {
+        filetypes = { '*', '!packer' },
+        user_default_options = {
+          tailwind = 'lsp',
+          names = false,
+          sass = { enable = true, parsers = { css = true } },
+        },
+      }
+    end,
   }
-
 })
