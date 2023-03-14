@@ -133,7 +133,6 @@ require("lazy").setup({
     end,
     dependencies = {
       'nvim-lua/plenary.nvim', -- Useful Lua utilities
-
       -- FZF sorter for Telescope
       { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
       'nvim-telescope/telescope-ui-select.nvim',
@@ -249,5 +248,15 @@ require("lazy").setup({
         },
       }
     end,
+  },
+  {
+    'rmagatti/auto-session',
+    config = function()
+    end
+  },
+  {
+    'sindrets/diffview.nvim',
+    config = function()
+    end
   }
 })
