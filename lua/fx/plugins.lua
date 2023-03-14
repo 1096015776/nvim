@@ -224,6 +224,18 @@ require("lazy").setup({
     config = function()
       require('plugins.indentline')
     end
+  },
+  {
+    'RRethy/vim-illuminate',
+    config = function()
+      require('plugins.illuminate')
+    end
+  },
+  {
+    'kevinhwang91/nvim-hlslens',
+    config = function()
+      require('plugins.hlslens')
+    end
   }
 
 })
