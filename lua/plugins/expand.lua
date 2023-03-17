@@ -1,3 +1,0 @@
-require('wilder').setup({
-  modes = {':', '/', '?'}
-})

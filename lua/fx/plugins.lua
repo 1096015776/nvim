@@ -269,7 +269,7 @@ require("lazy").setup({
     'gelguy/wilder.nvim',
     event = 'CmdlineEnter',
     config = function()
-      require('plugins.expand')
+      require('plugins.wilder')
     end
   }
 })
