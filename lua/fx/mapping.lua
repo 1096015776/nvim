@@ -17,6 +17,11 @@ keymap.set('n','L','g_')
 keymap.set('v','H','^')
 keymap.set('v','L','g_')
 
+keymap.set('n','<c-j>','<c-w>j')
+keymap.set('n','<c-k>','<c-w>k')
+keymap.set('n','<c-h>','<c-w>h')
+keymap.set('n','<c-l>','<c-w>l')
+
 keymap.set('i','jk','<esc>')
 
 keymap.set('n','<leader>w',':w<cr>')
