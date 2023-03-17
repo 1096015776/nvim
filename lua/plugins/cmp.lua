@@ -34,7 +34,7 @@ local icons = {
 cmp.setup {
   snippet = {
     expand = function(args)
-      require('luasnip').lsp_expand(args.body)
+      -- require('luasnip').lsp_expand(args.body)
     end,
   },
 
@@ -51,7 +51,7 @@ cmp.setup {
   sources = {
     { name = 'git' },
     { name = 'nvim_lsp' },
-    { name = 'luasnip' },
+    -- { name = 'luasnip' },
     { name = 'path' },
     { name = 'buffer', keyword_length = 5 },
   },

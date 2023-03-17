@@ -258,5 +258,18 @@ require("lazy").setup({
     'sindrets/diffview.nvim',
     config = function()
     end
+  },
+  {
+    'terryma/vim-expand-region',
+    config = function()
+      require('plugins.region')
+    end
+  },
+  {
+    'gelguy/wilder.nvim',
+    event = 'CmdlineEnter',
+    config = function()
+      require('plugins.expand')
+    end
   }
 })
