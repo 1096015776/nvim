@@ -58,6 +58,10 @@ local mappings = {
     l = {
       '<cmd>LazyGit<cr>',
       'lazygit'
+    },
+    h = {
+      '<cmd>DiffviewFileHistory %<cr>',
+      'fileHistory'
     }
   },
   l = {

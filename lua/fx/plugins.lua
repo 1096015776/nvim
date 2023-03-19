@@ -271,5 +271,12 @@ require("lazy").setup({
     config = function()
       require('plugins.wilder')
     end
+  },
+  {
+    'L3MON4D3/LuaSnip',
+    event = 'InsertEnter',
+    config = function()
+      require('plugins.luasnip')
+    end
   }
 })
