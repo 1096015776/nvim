@@ -25,7 +25,8 @@ opt.linebreak = true -- Break lines by spaces or tabs
 
 opt.number = true
 opt.relativenumber = true
--- opt.signcolumn = 'yes'
+opt.signcolumn = 'yes'
+-- todo fx
 -- opt.statuscolumn = "%C%=%4{&nu ? (&rnu ? (v:lnum == line('.') ? v:lnum . ' ' : v:relnum) : v:lnum) : ''}%=%s"
 opt.showmode = false
 opt.cmdheight = 0
@@ -61,7 +62,7 @@ opt.inccommand = 'nosplit' -- Show preview of ex commands
 
 opt.splitright = true -- Open new split to the right
 opt.splitbelow = true -- Open new split below
--- opt.splitkeep = 'screen'
+opt.splitkeep = 'screen'
 opt.whichwrap = opt.whichwrap + 'h,l,<,>,[,]'
 opt.joinspaces = false -- Prevent inserting two spaces with J
 

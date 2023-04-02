@@ -1,4 +1,5 @@
 local options = {
+  termguicolors = true,
   -- Indentation
   expandtab = true,
   shiftwidth = 2,
@@ -98,7 +99,7 @@ local options = {
   undoreload = 10000,
   shada = {'!', "'1000", '<50', 's10', 'h'}, -- Increase the shadafile size so that history is longer
   tgc = true,
-  background = 'dark'
+  background = 'dark',
 }
 
 for key, val in ipairs(options) do

@@ -52,11 +52,11 @@ end, { silent = true })
 vim.keymap.set('n', '<leader>sl', '<cmd>source ~/.config/nvim/lua/fx/plugins/luasnip.lua<cr>')
 
 -- Snippets
-require 'plugins.snippets.lua'
-require 'plugins.snippets.javascript'
-require 'plugins.snippets.typescript'
-require 'plugins.snippets.typescriptreact'
-require 'plugins.snippets.vue'
-require 'plugins.snippets.graphql'
-require 'plugins.snippets.php'
+require 'fx.plugins.snippets.lua'
+require 'fx.plugins.snippets.javascript'
+require 'fx.plugins.snippets.typescript'
+require 'fx.plugins.snippets.typescriptreact'
+require 'fx.plugins.snippets.vue'
+require 'fx.plugins.snippets.graphql'
+require 'fx.plugins.snippets.php'
 
