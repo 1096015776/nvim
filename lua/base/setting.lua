@@ -1,5 +1,4 @@
-local M = {}
-M.opt = {
+local options = {
   -- Indentation
   expandtab = true,
   shiftwidth = 2,
@@ -24,6 +23,7 @@ M.opt = {
 
   number = true,
   relativenumber = true,
+  -- TODO:待确认
   -- signcolumn = 'yes'
   -- statuscolumn = "%C%=%4{&nu ? (&rnu ? (v:lnum == line('.') ? v:lnum . ' ' : v:relnum) : v:lnum) : ''}%=%s"
   showmode = false,
@@ -50,7 +50,6 @@ M.opt = {
   cursorline = true, -- Highlight current line
   colorcolumn = {81, 121}, -- Highlight columns
   showmatch = true, -- Highlight matching parenthesis, etc.
-
   showmode = false, -- Do not show mode in command line
 
   -- UX
@@ -60,8 +59,8 @@ M.opt = {
 
   splitright = true, -- Open new split to the right
   splitbelow = true, -- Open new split below
+  -- todo:待确认
   -- splitkeep = 'screen'
-  -- whichwrap = .whichwrap + 'h,l,<,>,[,]'
   joinspaces = false, -- Prevent inserting two spaces with J
 
   completeopt = {'menuone', 'noselect'}, -- Completion menu
@@ -78,15 +77,6 @@ M.opt = {
     'o' -- Insert comment leader after hitting `o` or `O`
   },
 
-  -- Messages
---   shortmess:append{
---     I = true, -- No splash screen
---     W = true, -- Don't print "written" when editing
---     a = true, -- Use abbreviations in messages ([RO] intead of [readonly])
---     c = true, -- Do not show ins-completion-menu messages (match 1 of 2)
---     F = true, -- Do not print file name when opening a file
---     s = true -- Do not show "Search hit BOTTOM" message
---   },
 
   -- Integration with the system clipboard
   clipboard = {'unnamed', 'unnamedplus'},
@@ -107,20 +97,17 @@ M.opt = {
   undolevels = 1000,
   undoreload = 10000,
   shada = {'!', "'1000", '<50', 's10', 'h'}, -- Increase the shadafile size so that history is longer
-
-  -- Sesssions
---   sessionoptions:remove{'buffers', 'folds'},
-
-  cpoptions = vim.opt.cpoptions + ">",
   tgc = true,
   background = 'dark'
 }
 
-for opt, val in ipairs(M.opt) do
-    vim.opt[opt] = val
+for key, val in ipairs(options) do
+    vim.opt[key] = val
 end
 
-vim.opt.shortmess:append{
+local opt = vim.opt
+
+opt.shortmess:append{
     I = true, -- No splash screen
     W = true, -- Don't print "written" when editing
     a = true, -- Use abbreviations in messages ([RO] intead of [readonly])
@@ -129,4 +116,6 @@ vim.opt.shortmess:append{
     s = true -- Do not show "Search hit BOTTOM" message
 }
 
-vim.opt.sessionoptions:remove{'buffers', 'folds'}
+opt.sessionoptions:remove{'buffers', 'folds'}
+opt.cpoptions:append('>')
+opt.whichwrap:append('h,l,<,>,[,]') 
