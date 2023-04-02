@@ -278,5 +278,12 @@ require("lazy").setup({
     config = function()
       require('plugins.luasnip')
     end
+  },
+  {
+    'stevearc/aerial.nvim',
+    event = "UIEnter",
+    config = function()
+      require('plugins.aerial')
+    end
   }
 })
