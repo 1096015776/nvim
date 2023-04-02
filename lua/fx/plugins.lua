@@ -18,7 +18,7 @@ require("lazy").setup({
   {
     'kyazdani42/nvim-web-devicons',
     config = function()
-      require 'plugins.web_devicons'
+      require 'fx.plugins.web_devicons'
     end,
   },
   {
@@ -30,7 +30,7 @@ require("lazy").setup({
   {
     'folke/noice.nvim',
     config = function()
-      require 'plugins.noice'
+      require 'fx.plugins.noice'
     end,
     dependencies = {
       'MunifTanjim/nui.nvim',
@@ -43,13 +43,13 @@ require("lazy").setup({
       "AndrewRadev/switch.vim",
       event = { "VeryLazy" },
       config = function()
-        require('plugins.switch').load()
+        require('fx.plugins.switch').load()
       end
   },
   {
     'kyazdani42/nvim-tree.lua',
     config = function()
-      require('plugins.tree')
+      require('fx.plugins.tree')
     end
   },
   {
@@ -63,14 +63,14 @@ require("lazy").setup({
       'petertriho/cmp-git',
     },
     config = function()
-      require 'plugins.cmp'
+      require 'fx.plugins.cmp'
     end,
   },
   {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
     config = function()
-      require 'plugins.autopairs'
+      require 'fx.plugins.autopairs'
     end,
   },
   {
@@ -100,7 +100,7 @@ require("lazy").setup({
     'kevinhwang91/nvim-ufo',
     dependencies = { 'kevinhwang91/promise-async' },
     config = function()
-      require 'plugins.ufo'
+      require 'fx.plugins.ufo'
     end,
   },
   {
@@ -129,7 +129,7 @@ require("lazy").setup({
     'nvim-telescope/telescope.nvim',
     cmd = 'Telescope',
     config = function()
-      require 'plugins.telescope'
+      require 'fx.plugins.telescope'
     end,
     dependencies = {
       'nvim-lua/plenary.nvim', -- Useful Lua utilities
@@ -147,7 +147,7 @@ require("lazy").setup({
       "HopChar1CurrentLine",
     },
     config = function()
-      require('plugins.hop')
+      require('fx.plugins.hop')
     end
   },
     -- Advanced highlighting
@@ -155,7 +155,7 @@ require("lazy").setup({
       'nvim-treesitter/nvim-treesitter',
       build = ':TSUpdate',
       config = function()
-        require 'plugins.treesitter'
+        require 'fx.plugins.treesitter'
       end,
       dependencies = {
         'windwp/nvim-ts-autotag', -- Automatically end & rename tags
@@ -183,7 +183,7 @@ require("lazy").setup({
   {
     'williamboman/mason.nvim',
     config = function()
-      require('plugins.mason')
+      require('fx.plugins.mason')
     end,
   },
   {
@@ -192,14 +192,14 @@ require("lazy").setup({
   {
     'neovim/nvim-lspconfig',
     config = function()
-      require('plugins.lsp')
+      require('fx.plugins.lsp')
       -- require('lspconfig').tsserver.setup {}
     end
   },
   {
     'folke/which-key.nvim',
     config = function()
-      require('plugins.whichkey')
+      require('fx.plugins.whichkey')
     end
   },
   --vsc 
@@ -208,32 +208,32 @@ require("lazy").setup({
   {
     'lewis6991/gitsigns.nvim',
     config = function()
-      require('plugins.gitsigns')
+      require('fx.plugins.gitsigns')
     end
   },
   -- status
   {
     'glepnir/galaxyline.nvim',
     config = function()
-      require('plugins.status')
+      require('fx.plugins.status')
     end
   },
   {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
-      require('plugins.indentline')
+      require('fx.plugins.indentline')
     end
   },
   {
     'RRethy/vim-illuminate',
     config = function()
-      require('plugins.illuminate')
+      require('fx.plugins.illuminate')
     end
   },
   {
     'kevinhwang91/nvim-hlslens',
     config = function()
-      require('plugins.hlslens')
+      require('fx.plugins.hlslens')
     end
   },
   {
@@ -262,28 +262,28 @@ require("lazy").setup({
   {
     'terryma/vim-expand-region',
     config = function()
-      require('plugins.region')
+      require('fx.plugins.region')
     end
   },
   {
     'gelguy/wilder.nvim',
     event = 'CmdlineEnter',
     config = function()
-      require('plugins.wilder')
+      require('fx.plugins.wilder')
     end
   },
   {
     'L3MON4D3/LuaSnip',
     event = 'InsertEnter',
     config = function()
-      require('plugins.luasnip')
+      require('fx.plugins.luasnip')
     end
   },
   {
     'stevearc/aerial.nvim',
     event = "UIEnter",
     config = function()
-      require('plugins.aerial')
+      require('fx.plugins.aerial')
     end
   }
 })
