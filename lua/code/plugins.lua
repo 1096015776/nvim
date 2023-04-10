@@ -18,21 +18,16 @@ require("lazy").setup({
   },
   -- Navigation
   {
-    'phaazon/hop.nvim',
-    cmd = {
-      "HopWord",
-      "HopLine",
-      "HopChar1",
-      "HopChar1CurrentLine",
-    },
-    config = function()
-      require('fx.plugins.hop')
-    end
-  },
-  {
-    'terryma/vim-expand-region',
+   'terryma/vim-expand-region',
     config = function()
       require('fx.plugins.region')
     end
   },
+  {
+    'ggandor/leap.nvim',
+    config = function()
+      require('leap').add_default_mappings()
+    end
+  },
+  'fedepujol/move.nvim'
 })

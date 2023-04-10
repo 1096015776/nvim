@@ -285,5 +285,12 @@ require("lazy").setup({
     config = function()
       require('fx.plugins.aerial')
     end
-  }
+  },
+  {
+    'ggandor/leap.nvim',
+    config = function()
+      require('leap').add_default_mappings()
+    end
+  },
+  'fedepujol/move.nvim'
 })
