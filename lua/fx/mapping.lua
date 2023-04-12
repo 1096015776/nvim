@@ -52,3 +52,9 @@ keymap.set('n','<leader>3','<cmd>LazyGit<cr>',{silent = true})
 keymap.set('n','<leader>4','<cmd>lua require("telescope.builtin").help_tags()<cr>',{silent = true})
 keymap.set('n', '<leader>e', '<cmd>NvimTreeFindFileToggle<CR>')
 
+-- use system clipboard -- copy paste
+vim.keymap.set('v','y','"*y')
+vim.keymap.set('v','Y','"Zy')
+vim.keymap.set('v','<leader>y','"zy')
+vim.keymap.set('n','<leader>p','"zp')
+vim.keymap.set('i','<c-v>','<c-r>*')
