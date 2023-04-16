@@ -2,12 +2,12 @@ local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system(
     {"git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", -- latest stable release
-     lazypath})
+      lazypath})
 end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    -- Colorscheme
+  -- Colorscheme
   {
     'briones-gabriel/darcula-solid.nvim',
     dependencies = {'rktjmp/lush.nvim'}
@@ -39,12 +39,12 @@ require("lazy").setup({
 
   -- core util
   'tpope/vim-repeat',
-    {
-      "AndrewRadev/switch.vim",
-      event = { "VeryLazy" },
-      config = function()
-        require('plugins.switch').load()
-      end
+  {
+    "AndrewRadev/switch.vim",
+    event = { "VeryLazy" },
+    config = function()
+      require('plugins.switch').load()
+    end
   },
   {
     'kyazdani42/nvim-tree.lua',
@@ -76,18 +76,18 @@ require("lazy").setup({
   {
     'numToStr/Comment.nvim',
     keys = {
-        { 'gc', mode = { 'n', 'v' }, 'gcc' },
+      { 'gc', mode = { 'n', 'v' }, 'gcc' },
     },
     config = function()
       require('Comment').setup {
-          pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+        pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
       }
     end,
   },
   {
     'antoinemadec/FixCursorHold.nvim',
     config = function()
-        vim.g.cursorhold_updatetime = 500
+      vim.g.cursorhold_updatetime = 500
     end,
   },
   {
@@ -107,7 +107,7 @@ require("lazy").setup({
     'kylechui/nvim-surround',
     -- keys = { 'ys', 'cs', 'ds' },
     config = function()
-        require('nvim-surround').setup()
+      require('nvim-surround').setup()
     end,
   },
   {
@@ -150,35 +150,35 @@ require("lazy").setup({
       require('plugins.hop')
     end
   },
-    -- Advanced highlighting
+  -- Advanced highlighting
   {
-      'nvim-treesitter/nvim-treesitter',
-      build = ':TSUpdate',
-      config = function()
-        require 'plugins.treesitter'
-      end,
-      dependencies = {
-        'windwp/nvim-ts-autotag', -- Automatically end & rename tags
-        -- Dynamically set commentstring based on cursor location in file
-        { 'JoosepAlviste/nvim-ts-context-commentstring', dev = false },
-        'nvim-treesitter/playground',
-      },
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
+    config = function()
+      require 'plugins.treesitter'
+    end,
+    dependencies = {
+      'windwp/nvim-ts-autotag', -- Automatically end & rename tags
+      -- Dynamically set commentstring based on cursor location in file
+      { 'JoosepAlviste/nvim-ts-context-commentstring', dev = false },
+      'nvim-treesitter/playground',
     },
-    --lang feature
-    {
-      'axelvc/template-string.nvim',
-      config = function()
-        require('template-string').setup {
-          filetypes = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'vue' },
-          remove_template_string = true,
-          restore_quotes = {
-            normal = [[']],
-            jsx = [["]],
-          },
-        }
-      end,
-      event = 'InsertEnter',
-      ft = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'vue' },
+  },
+  --lang feature
+  {
+    'axelvc/template-string.nvim',
+    config = function()
+      require('template-string').setup {
+        filetypes = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'vue' },
+        remove_template_string = true,
+        restore_quotes = {
+          normal = [[']],
+          jsx = [["]],
+        },
+      }
+    end,
+    event = 'InsertEnter',
+    ft = { 'typescript', 'javascript', 'typescriptreact', 'javascriptreact', 'vue' },
   },
   {
     'williamboman/mason.nvim',
@@ -203,8 +203,8 @@ require("lazy").setup({
     end
   },
   --vsc 
-    'f-person/git-blame.nvim',
-    'kdheepak/lazygit.nvim',
+  'f-person/git-blame.nvim',
+  'kdheepak/lazygit.nvim',
   {
     'lewis6991/gitsigns.nvim',
     config = function()
@@ -252,6 +252,7 @@ require("lazy").setup({
   {
     'rmagatti/auto-session',
     config = function()
+      require('plugins.session')
     end
   },
   {
@@ -284,6 +285,20 @@ require("lazy").setup({
     event = "UIEnter",
     config = function()
       require('plugins.aerial')
+    end
+  },
+  {
+    'ggandor/leap.nvim',
+    event = "UIEnter",
+    config = function()
+      require('leap').set_default_keymaps()
+    end
+  },
+  {
+    'nvim-pack/nvim-spectre',
+    event = "UIEnter",
+    config = function()
+      require('plugins.spectre')
     end
   }
 })
