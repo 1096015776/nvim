@@ -72,17 +72,43 @@ map.bulk_add({
         rhs = ":keeppatterns substitute/\\s*\\%#\\s*/\\r/e <bar> normal! ==^<cr>",
         desc = "Split Line",
     },
+  -- move setting
+    {
+      mode={"v"},
+      lhs = "<c-j>",
+      rhs = ":MoveBlock(1)<cr>",
+      desc = "Move To NextLine ",
+    },
+    {
+      mode={"v"},
+      lhs = "<c-k>",
+      rhs = ":MoveBlock(-1)<cr>",
+      desc = "Move To PreLine",
+    },
+  -- window nav
     {
         mode = {"n"},
         lhs = "<c-j>",
-        rhs = "<esc>o",
-        desc = "Write Next Line",
+        rhs = "<c-w>j",
+        desc = "jump down window",
     },
     {
         mode = {"n"},
         lhs = "<c-k>",
-        rhs = "<esc>O",
-        desc = "Write Prev Line",
+        rhs = "<c-w>k",
+        desc = "jump up window",
+    },
+    {
+        mode = {"n"},
+        lhs = "<c-h>",
+        rhs = "<c-w>h",
+        desc = "jump left window",
+    },
+    {
+        mode = {"n"},
+        lhs = "<c-l>",
+        rhs = "<c-w>l",
+        desc = "jump right window",
     },
     {
         mode = {"n"},
@@ -127,4 +153,26 @@ map.bulk_add({
         rhs = ':cprev<cr>',
         desc = "Prev Local List",
     },
+    {
+      mode={"v"},
+      lhs = "p",
+      rhs = '"*p',
+      desc = "use clipboard to paste",
+      opts = { noremap=true }
+    },
+    {
+      mode={"v"},
+      lhs = "y",
+      rhs = '"*y',
+      desc = "",
+      opts = { noremap=true }
+    }
 })
+
+-- use system clipboard -- copy paste
+vim.keymap.set('v','y','"*y')
+vim.keymap.set('v','Y','"Zy')
+vim.keymap.set('v','<leader>y','"zy')
+vim.keymap.set('n','<leader>p','"zp')
+vim.keymap.set('i','<c-v>','<c-r>*')
+

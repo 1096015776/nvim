@@ -27,7 +27,6 @@ local options = {
   -- TODO:待确认
   -- signcolumn = 'yes'
   -- statuscolumn = "%C%=%4{&nu ? (&rnu ? (v:lnum == line('.') ? v:lnum . ' ' : v:relnum) : v:lnum) : ''}%=%s"
-  showmode = false,
   cmdheight = 0,
 
   list = true,
@@ -80,7 +79,7 @@ local options = {
 
 
   -- Integration with the system clipboard
-  clipboard = {'unnamed', 'unnamedplus'},
+  -- clipboard = {'unnamed', 'unnamedplus'},
 
   -- Navigation
   scrolloff = 5, -- Lines to scroll when cursor leaves screen

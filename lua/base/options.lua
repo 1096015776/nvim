@@ -91,7 +91,7 @@ opt.shortmess:append{
 }
 
 -- Integration with the system clipboard
-opt.clipboard = {'unnamed', 'unnamedplus'}
+-- opt.clipboard = {'unnamed', 'unnamedplus'}
 
 -- Navigation
 opt.scrolloff = 5 -- Lines to scroll when cursor leaves screen

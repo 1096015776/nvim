@@ -16,6 +16,14 @@ require("lazy").setup({
         require('nvim-surround').setup()
     end,
   },
+  {
+    "AndrewRadev/switch.vim",
+    event = { "VeryLazy" },
+    config = function()
+      require('fx.plugins.switch').load()
+    end
+  },
+
   -- Navigation
   {
    'terryma/vim-expand-region',
@@ -29,5 +37,17 @@ require("lazy").setup({
       require('leap').add_default_mappings()
     end
   },
+  -- {
+  --   'phaazon/hop.nvim',
+  --   cmd = {
+  --     "HopWord",
+  --     "HopLine",
+  --     "HopChar1",
+  --     "HopChar1CurrentLine",
+  --   },
+  --   config = function()
+  --     require('fx.plugins.hop')
+  --   end
+  -- },
   'fedepujol/move.nvim'
 })
