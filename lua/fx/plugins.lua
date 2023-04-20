@@ -292,5 +292,12 @@ require("lazy").setup({
       require('leap').add_default_mappings()
     end
   },
-  'fedepujol/move.nvim'
+  'fedepujol/move.nvim',
+  {
+    'nvim-pack/nvim-spectre',
+    event = "UIEnter",
+    config = function()
+      require('fx.plugins.spectre')
+    end
+  }
 })

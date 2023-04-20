@@ -1,6 +1,23 @@
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 local api = require("nvim-tree.api")
+local searchInDir = function()
+  local currNode = api.tree.get_node_under_cursor()
+  local cwd = ''
+  if (currNode.type == 'directory') then
+    cwd = currNode.absolute_path .. '/*'
+  else
+    cwd = string.sub(currNode.absolute_path,0,string.len(currNode.absolute_path)-string.len(currNode.name))
+  end
+  require('spectre').open({
+      is_insert_mode = true,
+      cwd = cwd,
+      search_text="",
+      replace_text="",
+      path="",
+      is_close = true, -- close an exists instance of spectre and open new
+    })
+end
 local M = {}
 function M.on_attach(bufnr)
   local options = {  buffer = bufnr, noremap = true, silent = true, nowait = true }
@@ -21,6 +38,7 @@ function M.on_attach(bufnr)
     vim.keymap.set('n', 'd', api.fs.cut,options)
     vim.keymap.set('n', 'p', api.fs.paste,options)
     vim.keymap.set('n', '<2-LeftMouse>',  api.node.open.edit,options)
+    vim.keymap.set('n','<c-f>',searchInDir,options)
 end
 
 require("nvim-tree").setup({
