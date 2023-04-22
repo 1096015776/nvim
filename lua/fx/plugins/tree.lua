@@ -52,13 +52,13 @@ require("nvim-tree").setup({
         enable = true,
         quit_on_focus_loss = true,
         open_win_config = function()
-            local columns = vim.o.columns
-            local lines = vim.o.lines
-            local width = math.max(math.floor(columns * 0.5), 50)
-            local height = math.max(math.floor(lines * 0.5), 20)
-            local left = math.ceil((columns - width) * 0.5)
-            local top = math.ceil((lines - height) * 0.5 - 2)
-            return { relative = "editor", border = "rounded", width = width, height = height, row = top, col = left }
+          local columns = vim.o.columns
+          local lines = vim.o.lines
+          local width = math.max(math.floor(columns * 0.5), 50)
+          local height = math.max(math.floor(lines * 0.5), 20)
+          local left = math.ceil((columns - width) * 0.5)
+          local top = math.ceil((lines - height) * 0.5 - 2)
+          return { relative = "editor", border = "rounded", width = width, height = height, row = top, col = left }
         end,
     },
   },

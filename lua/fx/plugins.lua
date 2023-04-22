@@ -299,5 +299,13 @@ require("lazy").setup({
     config = function()
       require('fx.plugins.spectre')
     end
+  },
+  {
+    'akinsho/bufferline.nvim',
+    version = "v3.*",
+    -- dependencies = 'nvim-tree/nvim-web-devicons',
+    config = function()
+      require("bufferline").setup{}
+    end
   }
 })
